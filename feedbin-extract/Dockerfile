@@ -10,6 +10,7 @@ RUN apk add --no-cache \
     nodejs \
     npm \
     && git clone https://github.com/feedbin/extract.git /app \
+    && npm install \
     && npm ci \
     && mkdir users \
     && echo "${EXTRACT_SECRET}" > "users/${EXTRACT_USER}"
